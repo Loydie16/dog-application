@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/dog-breed-application/static/css/main.371b172d.css",
-    "main.js": "/dog-breed-application/static/js/main.362b3d81.js",
+    "main.css": "/dog-breed-application/static/css/main.cf24fbac.css",
+    "main.js": "/dog-breed-application/static/js/main.b8cf06aa.js",
     "static/media/bg-paw.png": "/dog-breed-application/static/media/bg-paw.4a2580abd7f471027526.png",
     "static/media/logo.png": "/dog-breed-application/static/media/logo.1b28400918633cf76b4b.png",
     "static/media/stand-up.png": "/dog-breed-application/static/media/stand-up.e769932b9b9ed8a13f73.png",
     "index.html": "/dog-breed-application/index.html",
-    "main.371b172d.css.map": "/dog-breed-application/static/css/main.371b172d.css.map",
-    "main.362b3d81.js.map": "/dog-breed-application/static/js/main.362b3d81.js.map"
+    "main.cf24fbac.css.map": "/dog-breed-application/static/css/main.cf24fbac.css.map",
+    "main.b8cf06aa.js.map": "/dog-breed-application/static/js/main.b8cf06aa.js.map"
   },
   "entrypoints": [
-    "static/css/main.371b172d.css",
-    "static/js/main.362b3d81.js"
+    "static/css/main.cf24fbac.css",
+    "static/js/main.b8cf06aa.js"
   ]
 }
