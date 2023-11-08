@@ -14,7 +14,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   @apply dark:bg-slate-800; /* Default background color for dark mode */
-  background-image: url(../public/resources/bg-paw.png);
+  background-image: url(../resources/bg-paw.png);
   background-attachment: fixed;
 }
 

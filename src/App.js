@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home"
 import SingleDog from "./pages/SingleDog"
 import { DarkModeProvider } from './DarkModeContext';
-import { AnimatePresence } from "framer-motion";
+
 import { useEffect, useState } from "react";
 import Lottie from "lottie-react";
 import Preloader from "./Preloader.json";
@@ -47,16 +47,16 @@ function App() {
 </div>
   ) : (
     <>
-    <AnimatePresence mode="wait">
+    
     <DarkModeProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={ `/${process.env.PUBLIC_URL}`}>
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/:name/:id" element={<SingleDog />}></Route>
         </Routes>
       </BrowserRouter>
       </DarkModeProvider>
-    </AnimatePresence> 
+    
     </>
   );
 }

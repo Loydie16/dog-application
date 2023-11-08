@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import ScrollToTop from "react-scroll-up";
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
 import { useDarkMode } from '../DarkModeContext';
+import logoIMG from "../resources/logo.png";
+import up from "../resources/stand-up.png";
 
 
 export default function Home() {
@@ -80,7 +82,7 @@ export default function Home() {
 			<ScrollToTop showUnder={160} >
 				<button className='rounded-t-full transition ease-in-out delay-150 bg-slate-200 hover:-translate-y-1 hover:scale-110 dark:bg-slate-400 hover:bg-slate-300 dark:hover:-translate-y-1 dark:hover:scale-110 dark:hover:bg-slate-500 duration-300 ' style={{ zIndex: '-1' }}>
 					<img 
-						src='../resources/stand-up.png' 
+						src={up} 
 						alt='dogup'
 						className='w-24 h-auto p-2 z-1'
 					/>
@@ -94,7 +96,7 @@ export default function Home() {
 				<>
 				<section className={`p-8 max-w-7xl mx-auto`}>
 						<div className="text-center justify-center items-center">
-							<img src='../resources/logo.png' alt='logo' className="flex items-center justify-center text-center px-5 text-3xl font-bold lg:text-5xl w-full"/>
+							<img src={logoIMG} alt='logo' className="flex items-center justify-center text-center px-5 text-3xl font-bold lg:text-5xl w-full"/>
 								
 						
 							{/* <p className="my-8">
@@ -139,7 +141,7 @@ export default function Home() {
 
 						<div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3 my-10 lg:my-20">
 							{dogs.length === 0 && searched ? (
-								<div className='absolute flex justify-center items-center top-3/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-32 bg-slate-300 dark:bg-slate-500 rounded-lg'>
+								<div className='absolute flex justify-center items-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-32 bg-slate-300 dark:bg-slate-500 rounded-lg'>
 									<h1 className="text-slate-700 dark:text-white text-center px-5 text-3xl font-bold uppercase">
 										No results found for "{text}"
 									</h1>
