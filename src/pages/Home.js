@@ -141,7 +141,7 @@ export default function Home() {
 
 						<div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3 my-10 lg:my-20">
 							{dogs.length === 0 && searched ? (
-								<div className='absolute flex justify-center items-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-32 bg-slate-300 dark:bg-slate-500 rounded-lg'>
+								<div className='absolute flex justify-center items-center top-3/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-32 bg-slate-300 dark:bg-slate-500 rounded-lg'>
 									<h1 className="text-slate-700 dark:text-white text-center px-5 text-3xl font-bold uppercase">
 										No results found for "{text}"
 									</h1>
