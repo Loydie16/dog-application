@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
+/* import { motion } from 'framer-motion'; */
 import { ChevronLeft, ChevronRight } from 'react-feather';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
 import { useDarkMode } from '../DarkModeContext';
+import transition from '../transition';
 
 
-export default function SingleDog ({
+const SingleDog = ({
   autoSlide = true,
   autoSlideInterval = 3000,
-}) {
+}) => {
   const [dog, setDog] = useState([]);
   const [dogImages, setDogImages] = useState([]);
   const { name, id } = useParams();
@@ -76,6 +78,8 @@ export default function SingleDog ({
 
   return (
     <>
+    
+   
       <div className="fixed w-20 h-20 top-10 right-5 bg-slate-200 dark:bg-slate-500 pt-3 pl-3 rounded-full transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
 			<DarkModeSwitch
 				className='w-14 h-14'
@@ -209,7 +213,11 @@ export default function SingleDog ({
           ))}
         </div>
       </section>
+      
+      
+
     </>
   );
 }
 
+export default transition(SingleDog);

@@ -6,9 +6,13 @@ import { DarkModeSwitch } from 'react-toggle-dark-mode';
 import { useDarkMode } from '../DarkModeContext';
 import logoIMG from "../resources/logo.png";
 import up from "../resources/stand-up.png";
+import transition from '../transition';
+import Lottie from "lottie-react";
+import NoResult from "../DogNoResults.json";
 
 
-export default function Home() {
+const Home = () => {
+	
 	const [dogs, setDogs] = useState([]);
 	const [text, setText] = useState('');
 	const [searched, setSearched] = useState(false);
@@ -65,9 +69,11 @@ export default function Home() {
 		setText('');
 	};
 
+	
 
 	return (
 		<>	
+		
 			
 			<div className="fixed w-20 h-20 top-10 right-5 bg-slate-200 dark:bg-slate-500 pt-3 pl-3 rounded-full transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
 			<DarkModeSwitch
@@ -80,7 +86,13 @@ export default function Home() {
 			/>
 			</div>
 			<ScrollToTop showUnder={160} >
-				<button className='rounded-t-full transition ease-in-out delay-150 bg-slate-200 hover:-translate-y-1 hover:scale-110 dark:bg-slate-400 hover:bg-slate-300 dark:hover:-translate-y-1 dark:hover:scale-110 dark:hover:bg-slate-500 duration-300 ' style={{ zIndex: '-1' }}>
+				<button className='transition ease-in-out delay-150 bg-slate-200 hover:-translate-y-1 hover:scale-110 dark:bg-slate-400 hover:bg-slate-300 dark:hover:-translate-y-1 dark:hover:scale-110 dark:hover:bg-slate-500 duration-300 ' style={{
+					zIndex: '-1',
+					borderTopLeftRadius: '100%',
+					borderTopRightRadius: '100%',
+					borderBottomLeftRadius: '20%',
+					borderBottomRightRadius: '20%'
+				}}>
 					<img 
 						src={up} 
 						alt='dogup'
@@ -121,7 +133,7 @@ export default function Home() {
 										name="search"
 										id="search"
 										placeholder="Search for a dog breed"
-										className="py-2 px-4 rounded-l-xl shadow w-full bg-slate-200 border-2 border-slate-400 dark:bg-slate-400 dark:text-white dark:placeholder-white"
+										className="py-2 px-4 rounded-xl shadow w-full bg-slate-200 border-2 border-slate-400 dark:bg-slate-400 dark:text-white dark:placeholder-white"
 										value={text}
 										onChange={(e) => {
 											setText(e.target.value); // Update the "text" state as the user types
@@ -130,7 +142,7 @@ export default function Home() {
 										/>
 										<button
 										onClick={() => resetSearch()} // Add an onClick handler for the button
-										className="absolute rounded-r-xl  bg-red-400 w-10 h-full text-white font-bold text-xl align-text-top cursor-pointer hover:bg-red-600"
+										className="absolute rounded-r-xl right-0 w-10  bg-red-400 h-full text-white font-bold text-xl align-text-top cursor-pointer hover:bg-red-600"
 										>
 										X
 										</button>
@@ -141,10 +153,14 @@ export default function Home() {
 
 						<div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3 my-10 lg:my-20">
 							{dogs.length === 0 && searched ? (
-								<div className='absolute flex justify-center items-center top-3/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-32 bg-slate-300 dark:bg-slate-500 rounded-lg'>
+								<div className="absolute flex flex-col justify-center items-center top-3/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-slate-300 dark:bg-slate-500 rounded-lg pt-10 h-a">
 									<h1 className="text-slate-700 dark:text-white text-center px-5 text-3xl font-bold uppercase">
-										No results found for "{text}"
+									No results found for "{text}"
 									</h1>
+									<Lottie
+									className="w-64 h-auto"
+									animationData={NoResult}
+									/>
 								</div>
 
 							) : searched ? (
@@ -222,9 +238,13 @@ export default function Home() {
 					</section>
 				</>
 			)}
+		
 			
+
+            
 		</>
 	);
 }
 
 
+export default transition(Home);
