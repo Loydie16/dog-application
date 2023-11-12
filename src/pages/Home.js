@@ -4,7 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import ScrollToTop from "react-scroll-up";
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
 import { useDarkMode } from '../DarkModeContext';
-import logoIMG from "../resources/logo.png";
+import logoBlackIMG from "../resources/logo-black.png";
+import logoWhiteIMG from "../resources/logo-white.png";
 import up from "../resources/stand-up.png";
 import transition from '../transition';
 import Lottie from "lottie-react";
@@ -73,8 +74,6 @@ const Home = () => {
 
 	return (
 		<>	
-		
-			
 			<div className="fixed w-20 h-20 top-10 right-5 bg-slate-200 dark:bg-slate-500 pt-3 pl-3 rounded-full transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
 			<DarkModeSwitch
 				className='w-14 h-14'
@@ -101,14 +100,18 @@ const Home = () => {
 				</button>
 			</ScrollToTop>
 			{!dogs ? (
-				<h1 classN	ame="flex items-center justify-center text-white text-center px-5 text-3xl h-screen font-bold uppercase">
+				<h1 className="flex items-center justify-center dark:text-white text-center px-5 text-3xl h-screen font-bold uppercase">
 					Loading...
 				</h1>
 			) : (
 				<>
 				<section className={`p-8 max-w-7xl mx-auto`}>
-						<div className="text-center justify-center items-center">
-							<img src={logoIMG} alt='logo' className="flex items-center justify-center text-center px-5 text-3xl font-bold lg:text-5xl w-full"/>
+						<div className="text-center justify-center items-center bg-slate-200 dark:bg-slate-800 p-4 rounded-xl   ">
+						<img
+							src={isDarkMode ? logoWhiteIMG : logoBlackIMG}
+							alt='logo'
+							className="flex items-center justify-center text-center px-5 text-3xl font-bold lg:text-5xl w-full"
+						/>
 								
 						
 							{/* <p className="my-8">
@@ -120,6 +123,7 @@ const Home = () => {
 									The Dog Api
 								</a>
 							</p> */}
+							</div>
 
 							<form
 								className="max-w-xl mx-auto pt-10"
@@ -149,19 +153,19 @@ const Home = () => {
 									</div>
 								</div>
 							</form>
-						</div>
+						
 
 						<div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3 my-10 lg:my-20">
 							{dogs.length === 0 && searched ? (
-								<div className="absolute flex flex-col justify-center items-center top-3/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-slate-300 dark:bg-slate-500 rounded-lg pt-10 h-a">
-									<h1 className="text-slate-700 dark:text-white text-center px-5 text-3xl font-bold uppercase">
-									No results found for "{text}"
-									</h1>
-									<Lottie
-									className="w-64 h-auto"
-									animationData={NoResult}
-									/>
-								</div>
+									<div className="absolute flex flex-col justify-center items-center left-1/2 transform -translate-x-1/2  bg-slate-300 dark:bg-slate-500 rounded-lg pt-10 h-a">
+										<h1 className="text-slate-700 dark:text-white text-center px-5 text-3xl font-bold uppercase">
+										No results found for "{text}"
+										</h1>
+										<Lottie
+											className="w-64 h-auto"
+											animationData={NoResult}
+										/>
+									</div>
 
 							) : searched ? (
 								dogs.map((dog) => (
