@@ -8,6 +8,13 @@ This is my first React.js project to practice my React skills. It is a React app
 - **Breed Information**: Detailed information about various dog breeds.
 - **User Authentication**: Secure login and registration system.
 
+## Technologies Used
+
+- HTML
+- Tailwind CSS
+- JavaScript (React)
+- The Dog API
+
 ## Installation
 
 1. Clone the repository:
